@@ -1,5 +1,7 @@
+*** We can implement these three options and be able to toggle between them in the Unity Editor
 
-## 🔥 1. Auto-cast as soon as a valid spell is detected
+
+## 1. Auto-cast as soon as a valid spell is detected
 
 * **Pros:**
 
@@ -13,7 +15,7 @@
 
 ---
 
-## ✋ 2. Manual Cast Trigger (hands off, double sign, or key press)
+##  2. Manual Cast Trigger (hands off, double sign, or key press)
 
 * **Examples:**
 
@@ -34,7 +36,7 @@
 
 ---
 
-## 🧪 3. Hybrid Approach
+##  3. Hybrid Approach
 
 * Auto-cast *basic* spells (short combos like “Fireball”) → chaotic discovery.
 * Require manual trigger for *advanced* spells (multi-step, or locked).
@@ -45,7 +47,7 @@
 
 ---
 
-## 🕹️ Game Design Implications
+##  Game Design Implications
 
 * **Discovery vs. Mastery**
 
@@ -57,4 +59,3 @@
   * If spells are **unlockable (XP, paywall, etc.)**, then auto-cast must respect lock state → either block cast or give a “fizzle” effect if spell is locked.
   * Manual trigger makes it more natural — you only try what you’ve unlocked.
 
----
