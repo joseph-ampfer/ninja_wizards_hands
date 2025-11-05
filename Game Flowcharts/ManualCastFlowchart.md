@@ -52,3 +52,73 @@ graph TD
     O --> P[Clear / Reset Gesture Buffer]
     P --> F
 ```
+---
+
+```mermaid
+classDiagram
+
+    class GestureRecognizerRunner {
+        <<Subject/Publisher>>
+        +UnityEvent~string, string~ OnGestureRecognized
+        -ProcessResult(GestureRecognizerResult) void
+    }
+    
+    class SpellManager {
+        <<Observer/Subscriber>>
+        +OnGestureRecognized(string leftStr, string rightStr) void
+        -HandleGesture(GestureLabel, GestureLabel) void
+        -ConcurrentQueue gestureQueue
+    }
+    
+    class MediaPipeCamera {
+        <<External System>>
+        Detects hand gestures
+    }
+    
+    class GestureMapper {
+        <<Utility>>
+        +ToEnum(string) GestureLabel
+    }
+    
+    MediaPipeCamera --> GestureRecognizerRunner : feeds frames
+    GestureRecognizerRunner --> SpellManager : fires event
+    SpellManager ..> GestureMapper : converts strings
+    
+    note for GestureRecognizerRunner "Line 278:\nOnGestureRecognized?.Invoke(leftGesture, rightGesture)"
+    
+    note for SpellManager "Line 43:\npublic void OnGestureRecognized(string leftStr, string rightStr)\nConnected via Unity Inspector"
+
+```
+
+---
+```mermaid
+graph TB
+    subgraph "Worker Thread MediaPipe"
+        A[Camera Frame] --> B[MediaPipe Processing]
+        B --> C[GestureRecognizer.RecognizeAsync]
+        C --> D[OnGestureOutput Callback]
+        D --> E[ProcessResult]
+        E --> F[OnGestureRecognized.Invoke]
+    end
+    
+    subgraph "Thread Boundary - ConcurrentQueue"
+        F --> G[gestureQueue.Enqueue]
+        G --> H{ConcurrentQueue<br/>Thread-Safe Buffer}
+    end
+    
+    subgraph "Main Thread Unity"
+        H --> I[Update Loop]
+        I --> J[gestureQueue.TryDequeue]
+        J --> K[HandleGesture]
+        K --> L[Unity API Calls]
+        L --> M[SpellCaster.Cast]
+        L --> N[GestureUI.ShowGesture]
+        L --> O[GameObject/Transform access]
+    end
+    
+    style G fill:#C34A6B
+    style H fill:#CC3333
+    style J fill:#4CAF50
+    style F fill:#D2B48C
+    style L fill:#4682B4
+```
