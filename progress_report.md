@@ -76,6 +76,12 @@ New skill mastery
 ### **Strategy Pattern ⭐ (Core Pattern):**
 ![](images/strategy-pattern.png)
 
+Location: Spell.cs holds a SpellBehavior reference, and different behaviors implement different casting logic.
+Benefits:
+- Easy to add new spell types without modifying existing code
+- Each spell behavior is isolated and testable
+- Runtime behavior switching possible
+
 ---
 
 ### **Observer Pattern:**
