@@ -1,5 +1,7 @@
 *** We can implement these three options and be able to toggle between them in the Unity Editor
 
+** These are also assuming two hand requirment (each 'gesture' needs both hands)
+
 
 ## 1. Auto-cast as soon as a valid spell is detected
 
