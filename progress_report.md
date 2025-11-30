@@ -10,7 +10,6 @@ backgroundColor: white
 # Wizards Game
 ## Individual Project Report
 
-**Evaluating AI Performance on Medical Licensing Exams**
 
 ---
 
