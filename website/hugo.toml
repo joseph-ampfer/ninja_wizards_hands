@@ -1,0 +1,56 @@
+baseURL = 'https://joseph-ampfer.github.io/ninja_wizards_hands/'
+languageCode = 'en-us'
+title = 'Wizards Game - Gesture-Based Combat'
+theme = 'PaperMod'
+
+[params]
+description = "A Unity-based 1v1 combat game using hand gesture recognition for spell casting"
+author = "Joseph Ampfer"
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowToc = true
+
+[params.homeInfoParams]
+Title = "Wizards Game"
+Content = "A Unity-based combat game where you cast spells using hand gestures. No VR headset required!"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/joseph-ampfer/ninja_wizards_hands"
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "gameplay"
+name = "Gameplay Tutorial"
+url = "/gameplay/"
+weight = 20
+
+[[menu.main]]
+identifier = "architecture"
+name = "Architecture"
+url = "/architecture/"
+weight = 30
+
+[[menu.main]]
+identifier = "technical"
+name = "Technical Details"
+url = "/technical/"
+weight = 40
+
+[[menu.main]]
+identifier = "download"
+name = "Download"
+url = "/download/"
+weight = 50
+
+[markup.goldmark.renderer]
+unsafe = true
+
