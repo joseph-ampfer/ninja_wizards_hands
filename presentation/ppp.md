@@ -28,6 +28,17 @@ style: |
     background: white;
     border-radius: 8px;
   }
+  table {
+    background: #0f3460 !important;
+  }
+    th {
+    background: #0f3460 !important;
+    color: #eaeaea;
+  }
+  td {
+    background: #16213e !important;
+    color: #eaeaea;
+  }
 ---
 
 <!-- _class: lead -->
