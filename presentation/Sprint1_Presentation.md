@@ -26,8 +26,6 @@ March 1, 2026
 - Spell projectiles must be visible and consistent for all players
 - Gesture recognition adds latency complexity
 
----
-
 **My Approach:**
 - **Netcode for GameObjects** for state sync and RPCs
 - **Facepunch.Steamworks** for Steam P2P transport and matchmaking
@@ -141,8 +139,6 @@ All 15 sprint tasks completed across 4 weeks.
 - Proved the hardest technical piece first (networked spell casting with `NetworkObject.Spawn()`)
 - Preserved single-player code path while adding networked overloads
 
----
-
 ### What Went Wrong
 - Steam transport not yet tested — using Unity Transport locally
 - Lobby/matchmaking deferred; still using manual Host/Client GUI buttons
@@ -159,9 +155,6 @@ All 15 sprint tasks completed across 4 weeks.
 
 - **Week 1:** Installed Netcode for GameObjects and Facepunch.Steamworks SDK. Created multiplayer scene with NetworkManager. Set up GUI connection buttons and dual-instance testing.
 - **Week 2:** Built GameSpawner for server-authoritative player spawning. Created networked player prefab with NetworkTransform. Implemented PlayerNetworkSetup for camera/audio management.
-
----
-
 - **Week 3:** Created NetworkSpellCaster with ServerRpc pipeline. Implemented NetworkProjectileBase with server-authoritative lifecycle. Added networked Cast() to ProjectileSpellBehavior.
 - **Week 4:** Implemented impact VFX sync via OnNetworkDespawn. Added NetworkVariable health with server-authoritative damage. End-to-end combat loop working.
 
@@ -217,8 +210,23 @@ All 15 sprint tasks completed across 4 weeks.
 
 ## Learning with AI
 
-- **Topic 1:** Using AI to architect networked game systems — designing ServerRpc/ClientRpc patterns, NetworkVariable usage, and server-authoritative damage flow
-- **Topic 2:** Using AI to refactor single-player code into multiplayer — preserving existing SpellBehavior strategy pattern while adding networked overloads
+### Topic 1: Networking Fundamentals
+
+- Learned about **client/server authority** — the server validates all actions to prevent cheating
+- Learned **RPCs (Remote Procedure Calls)**:
+  - `[ServerRpc]` — client requests the server to run a function (e.g. "I want to cast a spell")
+  - `[ClientRpc]` — server tells all clients to run a function (e.g. "play this animation")
+- Studied **latency compensation** — client-side prediction, server event timestamps, fast-forwarding delayed events on clients
+
+---
+
+## Learning with AI (cont.)
+
+### Topic 2: Unity Netcode for GameObjects
+
+- **Spawning/Despawning NetworkObjects** — spawning creates a synced copy on every client; each client runs the code independently. Despawning triggers `OnNetworkDespawn` callback (used for explosion VFX)
+- **NetworkVariables** — synced values across server/clients with `OnValueChanged` listener to react on every client (e.g. update health bar when health changes)
+- **Refactoring single-player to multiplayer** — preserved existing SpellBehavior strategy pattern while adding networked `Cast()` overloads for `NetworkSpellCaster`
 
 ---
 
