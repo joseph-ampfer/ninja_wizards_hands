@@ -26,6 +26,8 @@ March 1, 2026
 - Spell projectiles must be visible and consistent for all players
 - Gesture recognition adds latency complexity
 
+--- 
+
 **My Approach:**
 - **Netcode for GameObjects** for state sync and RPCs
 - **Facepunch.Steamworks** for Steam P2P transport and matchmaking
@@ -38,6 +40,12 @@ March 1, 2026
 > Establish the core networking foundation and prove out the end-to-end multiplayer combat loop.
 
 **Target:** Two players connect, spawn into the arena, cast networked projectile spells at each other, deal synchronized damage, and see health update on both clients.
+
+---
+
+## Demo
+
+https://drive.google.com/file/d/18KjyU3iVJRN0QS9FWnLHQqdiss1eoDCj/view?usp=sharing 
 
 ---
 
