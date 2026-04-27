@@ -7,9 +7,9 @@ weight: 50
 
 ## Windows Demo
 
-Try out the game with our Windows demo build!
+Try out the game with our Windows demo build! (have Steam running for multiplayer)
 
-[**Download Windows Demo** (Google Drive)](https://drive.google.com/file/d/1dMynKtngsOCwr-KwRBChzfMUlerCgxel/view?usp=drive_link)
+[**Download Windows Demo** (Google Drive)](https://drive.google.com/file/d/1C3ObdaB2tP7crrE4sZAklsf5h196MCxD/view?usp=sharing) 
 
 ## System Requirements
 
