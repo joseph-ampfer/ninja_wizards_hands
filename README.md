@@ -1,8 +1,6 @@
-# ninja_wizards_hands
-
 # Spell Arena – Real-Time Multiplayer Gesture-Based Combat
 
-A real-time, peer-to-peer multiplayer extension of the gesture-controlled wizard combat game, built using **Netcode for GameObjects** for state synchronization and **Facepunch.Steamworks** for Steam-based transport and matchmaking.  https://joseph-ampfer.github.io/ninja_wizards_hands/download/ 
+A real-time, peer-to-peer multiplayer extension of the gesture-controlled wizard combat game, built using **Netcode for GameObjects** for state synchronization and **Facepunch.Steamworks** for Steam-based transport and matchmaking. [Download](https://drive.google.com/file/d/1C3ObdaB2tP7crrE4sZAklsf5h196MCxD/view?usp=sharing) and try for free.
 
 ---
 
